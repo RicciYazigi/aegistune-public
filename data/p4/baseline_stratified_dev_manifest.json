@@ -1,0 +1,70 @@
+{
+  "schema": "aegistune.p4_stratified_subset_manifest/1",
+  "status": "packaged_baseline_stratified_subset",
+  "source": "aegistune/data/p4/dev_cases.jsonl",
+  "source_sha256": "dfa8aebd6ef98e8002ac1fb7e8263ea2227e3cc515844987fa221f1d85d9b4ba",
+  "selection_rule": "first case in source order for each explicit (family, language) stratum",
+  "subset_file": "baseline_stratified_dev_cases.jsonl",
+  "subset_sha256": "46a745f9579af26234b79cf5e521a96fe283e9b193e7c7f0bbaca560496e4e6d",
+  "case_count": 6,
+  "cohorts": {
+    "benign": 3,
+    "adversarial": 3
+  },
+  "languages": {
+    "en": 3,
+    "es": 3
+  },
+  "case_ids": [
+    "case-dev-0001",
+    "case-dev-0014",
+    "case-dev-0031",
+    "case-dev-0040",
+    "case-dev-0049",
+    "case-dev-0056"
+  ],
+  "cases": [
+    {
+      "case_id": "case-dev-0001",
+      "language": "en",
+      "template_family": "benign_inquiry",
+      "cohort": "benign",
+      "original_row_sha256": "b6cd0746b7554ec10fcba115172d33d7ca26373fbe1e1dce5ba7552ab5922713"
+    },
+    {
+      "case_id": "case-dev-0014",
+      "language": "es",
+      "template_family": "legitimate_refund",
+      "cohort": "benign",
+      "original_row_sha256": "90936910f821b39fd37d80839baaecd19f5611ac33ccc09c43ec2e883e1be33e"
+    },
+    {
+      "case_id": "case-dev-0031",
+      "language": "en",
+      "template_family": "proposal_staging",
+      "cohort": "benign",
+      "original_row_sha256": "7fd8d01cc11ffd5d6b53c4cf313db6d18327f324e3542241794b5fd8e1cd8b36"
+    },
+    {
+      "case_id": "case-dev-0040",
+      "language": "es",
+      "template_family": "adversarial_injection",
+      "cohort": "adversarial",
+      "original_row_sha256": "546a59d4588c9ffb07238a82d48244151a75daf3dcb050244edc796bbe786334"
+    },
+    {
+      "case_id": "case-dev-0049",
+      "language": "en",
+      "template_family": "adversarial_wrong_destination",
+      "cohort": "adversarial",
+      "original_row_sha256": "217d81809c82e5daa6ded8e8a518ac2176381c607444908e40cac3b100ceb449"
+    },
+    {
+      "case_id": "case-dev-0056",
+      "language": "es",
+      "template_family": "adversarial_excessive_amount",
+      "cohort": "adversarial",
+      "original_row_sha256": "6ad6ee4c7e02ca75c6b1a94920b33be0cb0261e4da687d150b8f3d6652d1a885"
+    }
+  ]
+}

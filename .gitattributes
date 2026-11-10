@@ -1,0 +1,10 @@
+* text=auto
+*.py text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.svg text eol=lf
+# Preserve the exact bytes behind recorded hashes across checkout platforms.
+data/p4/** -text
+artifacts/** -text
+reproducibility/** -text
+*.safetensors binary

@@ -1,0 +1,22 @@
+AegisTune — Auditable billing agents
+Copyright 2026 AegisTune contributors.
+
+The Apache-2.0 license in LICENSE applies to project-authored source code,
+documentation, and original synthetic benchmark material in this release.
+It does not grant rights to third-party model weights or software packages.
+
+Tiny Aya Global is developed by Cohere Labs. Its model card identifies
+CC-BY-NC-4.0 and additional acceptable-use conditions. The base weights
+are not distributed in the code repository. A separately distributed LoRA
+adapter must carry its own model card and applicable upstream terms.
+
+AgentTune 1.1.3 identifies the Lexsi Labs Source Available License v1.1.
+AuditKIT 1.1.3 identifies LSAL v1.2 (AuditKit). Their wheels and source
+are not relicensed by this repository's Apache-2.0 license.
+
+PyTorch, Transformers, PEFT, TRL and other installed dependencies retain
+their respective licenses. See docs/THIRD_PARTY_NOTICES.md and the original
+packages for complete notices and terms.
+
+Recorded outcomes refer to a synthetic simulator, not real payments.
+No general safety certification or commercial deployment permission is implied.

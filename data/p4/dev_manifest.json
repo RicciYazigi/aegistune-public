@@ -1,0 +1,266 @@
+{
+  "case_hashes": [
+    {
+      "case_id": "case-dev-0001",
+      "sha256": "8faa8674148b34ec7395ca5fda0dc3375ebc62d4faeef8d77451aa8f3b0379a6"
+    },
+    {
+      "case_id": "case-dev-0002",
+      "sha256": "4d723bf2e3531da69bab5fdadd3dc2b62038122fc6caa5cbbbe9ec985057fcd6"
+    },
+    {
+      "case_id": "case-dev-0003",
+      "sha256": "96c2d2ddbc176c27cb2c2a37c3e0ae1a0c3bcc932b570cbb045b6ce16496392e"
+    },
+    {
+      "case_id": "case-dev-0004",
+      "sha256": "fc05b42587e1a82d5d82fb58b030a785a188d223f06689d286242e60035fa0d5"
+    },
+    {
+      "case_id": "case-dev-0005",
+      "sha256": "da2d44bc03850ee3e3606e303498bde960d7262d854f086f2f897ee441f41ba5"
+    },
+    {
+      "case_id": "case-dev-0006",
+      "sha256": "b91e3bc2207616161309057078038a861c92f08998bf2fd5d8181f2ece0f421e"
+    },
+    {
+      "case_id": "case-dev-0007",
+      "sha256": "af711439769e2c63f42e78488ed8f75e31ed8ad4f63a2e564854e896776664eb"
+    },
+    {
+      "case_id": "case-dev-0008",
+      "sha256": "1e752796067dd64186bee1b3e7f8ce2a67b313435f993bcce7714f1554d837c7"
+    },
+    {
+      "case_id": "case-dev-0009",
+      "sha256": "5cfc5e8fb3eff192313227a840d068ac86ae312c81be52f342cfc17c6b9f4c3a"
+    },
+    {
+      "case_id": "case-dev-0010",
+      "sha256": "1c5d945fe216c8ba062dffd2ebcb7ac026ca6cabf9990c3bebf2004cbedad97a"
+    },
+    {
+      "case_id": "case-dev-0011",
+      "sha256": "c5f2de6183dc716ac106b43be579d501a3ecafdd5f613683d582675b3f15dd1a"
+    },
+    {
+      "case_id": "case-dev-0012",
+      "sha256": "fa0b0c819f8fcd789921cb817921ce5ecf04c0cc7970f8f4cb9fa69274cf45bd"
+    },
+    {
+      "case_id": "case-dev-0013",
+      "sha256": "0e3cb7a416707ffec7598e61b27a79382c790e36b4af70485a5750b5128139ea"
+    },
+    {
+      "case_id": "case-dev-0014",
+      "sha256": "8edebfea262d13b8d2c7a26025f245d79be03fdac703a70fcf91509a425b1403"
+    },
+    {
+      "case_id": "case-dev-0015",
+      "sha256": "cf00af9be77e7ea51c4ffcffa2fe77a2f9cbd083c88b613dfc4f9ca86d0bb501"
+    },
+    {
+      "case_id": "case-dev-0016",
+      "sha256": "c7d6b88c54b3b9dcf8210bb5cdd6177f94b0270a95a7f4c88bdf4aa80b0cfe2e"
+    },
+    {
+      "case_id": "case-dev-0017",
+      "sha256": "11d9e23e1c730bd55b5348993f725800319f899e0e386ebfb12f013a53564e42"
+    },
+    {
+      "case_id": "case-dev-0018",
+      "sha256": "8cb18998ef7079a55d64147c0931d31c54334c7c1431035538e98dcdfc72225b"
+    },
+    {
+      "case_id": "case-dev-0019",
+      "sha256": "ac9003b52efd4eb718928e5f1a9aac9e5294f950e33b3e82b9144bd726207c8c"
+    },
+    {
+      "case_id": "case-dev-0020",
+      "sha256": "00cc91aef2fab18baa8c2963eee8766a387bf55b870a421c89b1b5cec2e45a5d"
+    },
+    {
+      "case_id": "case-dev-0021",
+      "sha256": "0a3a154026a1e3a967d3b7aa417ecb8534271ee22354e203ad829127d2037bbb"
+    },
+    {
+      "case_id": "case-dev-0022",
+      "sha256": "1e32dafa7e37f81011c495942c8bb14f88ac8a10adf17d16bcb697b28146059a"
+    },
+    {
+      "case_id": "case-dev-0023",
+      "sha256": "a6a7cb6847317320e6b0514c26f7f2f1103b0dd779991ef1a1dfa7cd42892324"
+    },
+    {
+      "case_id": "case-dev-0024",
+      "sha256": "6402a1111868da1fc92a2a78468f2219463bcc557bb9d9997d77af72a602845c"
+    },
+    {
+      "case_id": "case-dev-0025",
+      "sha256": "526517625ffcd08aece08edcd9c34e153ba381841d562e96b924fab0d3a60640"
+    },
+    {
+      "case_id": "case-dev-0026",
+      "sha256": "adf1c40422d93569b1d7e15f16e551a78cc539fcb138944b2eb60861b524ea36"
+    },
+    {
+      "case_id": "case-dev-0027",
+      "sha256": "48df8ceb342e42454b213f745402c8eaf56ac4b4de2fca9ac2cb03bc5dd5167b"
+    },
+    {
+      "case_id": "case-dev-0028",
+      "sha256": "44b81d54fd7a316bd76b642170a38b7acb52bcafd9a8dd5ae32b76d9d29780fb"
+    },
+    {
+      "case_id": "case-dev-0029",
+      "sha256": "769bd4cc1fc08e5b0bbe8f3b3d0f01ae8827dcbc9dd2aae77b5886862d2ae388"
+    },
+    {
+      "case_id": "case-dev-0030",
+      "sha256": "7eb4a1bd0b40071847682cf660715405fcafd4e0701b608b3981b4d761f411c3"
+    },
+    {
+      "case_id": "case-dev-0031",
+      "sha256": "77b1231fce35ace0b2673a382f13244311fadf75f2bc151533a797737c9235a8"
+    },
+    {
+      "case_id": "case-dev-0032",
+      "sha256": "1251f179f5be5113de02a4d560e944f8e16d3b82076f6c327b4c7bac9b0a01fd"
+    },
+    {
+      "case_id": "case-dev-0033",
+      "sha256": "ea7365ae83daa8796950c02e3dee01a3047c013785c07017967b7d8a04dad710"
+    },
+    {
+      "case_id": "case-dev-0034",
+      "sha256": "2ad77409d81c56264ad6b9e70d156bfacc27758bf0182a70e0e7ae50d4c53414"
+    },
+    {
+      "case_id": "case-dev-0035",
+      "sha256": "21ceb861fd188f971245ced82cbd1da27aa1b224c37f7e246747783aac55054c"
+    },
+    {
+      "case_id": "case-dev-0036",
+      "sha256": "23c6648a78b317d32cf3e9ca4cc93c8832ff0d403d7f8e8d1751845cf265040e"
+    },
+    {
+      "case_id": "case-dev-0037",
+      "sha256": "54ec6265ebdecffa69c5b8637fe953228febe8bb5eb2090a22097c985a1369cb"
+    },
+    {
+      "case_id": "case-dev-0038",
+      "sha256": "0d9bd151bba5094c3a4f7c6b1ce3413a1519d2cdc55baeb7da3aacb631ff43b6"
+    },
+    {
+      "case_id": "case-dev-0039",
+      "sha256": "45ecaaf1a13f417a90121cf39601740bd0bef6344cbb3cc102a336f1746bacc2"
+    },
+    {
+      "case_id": "case-dev-0040",
+      "sha256": "961a0d204faecf84725166eed500d12fa8178276513c6a45822ace09b9a18498"
+    },
+    {
+      "case_id": "case-dev-0041",
+      "sha256": "044dd4fef23f587f1de7ef55830291feba06b24ca7454d0c92ff4eb0986a48e3"
+    },
+    {
+      "case_id": "case-dev-0042",
+      "sha256": "f91b478a5b55aeb39cdcb460beb58111e71b55f246b182008381172098893467"
+    },
+    {
+      "case_id": "case-dev-0043",
+      "sha256": "c1970078fcc1a82c1a90173d4c81fe95ecc5c7d57e00526bd9fe37fde5875bea"
+    },
+    {
+      "case_id": "case-dev-0044",
+      "sha256": "f32a7a0ae1e39cd44a5d10777408579f45b80c9d503f2ebf1d4df14ab29a02cf"
+    },
+    {
+      "case_id": "case-dev-0045",
+      "sha256": "67b306898bfcfe3e79e1e483f102d65a8d6cdcb266aefde988681025f2f9e42e"
+    },
+    {
+      "case_id": "case-dev-0046",
+      "sha256": "3847e400b75bfe6462b74cbab5de54de8f22e1f750f3bed9005232913570a031"
+    },
+    {
+      "case_id": "case-dev-0047",
+      "sha256": "044a02de93f8bf1d8f41850e2d966d253b0d9a3a4a8b9b836d08c5097cf7f9c8"
+    },
+    {
+      "case_id": "case-dev-0048",
+      "sha256": "64cb18a3eb3146978fec6d56812d376d9c9ead56b9843c89994e28b525062494"
+    },
+    {
+      "case_id": "case-dev-0049",
+      "sha256": "d237ceb34c892d0fc23e4c853b8d26148a37ea67be3078e6b33d3ca5d541e54c"
+    },
+    {
+      "case_id": "case-dev-0050",
+      "sha256": "c8f90e1210431479b075e0c81bf85b26e78d63840e59a3a1dc700c6e11e4858b"
+    },
+    {
+      "case_id": "case-dev-0051",
+      "sha256": "2d75ebc0ecc1115cfc43a18dd8cabffe728ee61c046af4737c9595b811de5d89"
+    },
+    {
+      "case_id": "case-dev-0052",
+      "sha256": "107fd0972ff3de92d83829da26880e626ecd2213ef9638aa9c70a4dd6e267600"
+    },
+    {
+      "case_id": "case-dev-0053",
+      "sha256": "6673c81a6d98acb4f33bdd091426592918ed150e261c603b8d17784885e160fb"
+    },
+    {
+      "case_id": "case-dev-0054",
+      "sha256": "41c1b281cdf1f9ffe4f81b555010925dc183bbc17ebc3ef3ca2428c8c278067c"
+    },
+    {
+      "case_id": "case-dev-0055",
+      "sha256": "63ee89d1f1f3442916da12b912a887e81deb3e9f080752138b9450144746ff2e"
+    },
+    {
+      "case_id": "case-dev-0056",
+      "sha256": "f33a2ed92081c462bcc7289d8f382cfb3e2ff3d601c8074280b399ad378ce8bc"
+    },
+    {
+      "case_id": "case-dev-0057",
+      "sha256": "39dca1bdedd55cffb4fb085ffab7f755a00ae98196d5351bf8a5b1bf81eabaf7"
+    },
+    {
+      "case_id": "case-dev-0058",
+      "sha256": "d62091ee33a61a6ab9a3c54e7553692ec5046d2b9cc5b1dd3c143eebf855320c"
+    },
+    {
+      "case_id": "case-dev-0059",
+      "sha256": "e999d25349332d763dab429b1f1f3969f63d7261485c8a4aa8ac53dc6cdcdc63"
+    },
+    {
+      "case_id": "case-dev-0060",
+      "sha256": "ff2ae031e696d92c6b6ffb6ec8d714aca55f6c6ff532e3a284b1266e36b8e200"
+    }
+  ],
+  "cohorts": {
+    "adversarial": 21,
+    "benign": 39
+  },
+  "count": 60,
+  "file_bytes": 149459,
+  "file_name": "dev_cases.jsonl",
+  "file_sha256": "dfa8aebd6ef98e8002ac1fb7e8263ea2227e3cc515844987fa221f1d85d9b4ba",
+  "languages": {
+    "en": 30,
+    "es": 30
+  },
+  "seed": 42,
+  "split": "dev",
+  "template_families": {
+    "adversarial_excessive_amount": 6,
+    "adversarial_injection": 9,
+    "adversarial_wrong_destination": 6,
+    "benign_inquiry": 12,
+    "legitimate_refund": 18,
+    "proposal_staging": 9
+  }
+}

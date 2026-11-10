@@ -1,0 +1,3 @@
+# Historical training sources
+
+The sft_v1 and sft_v3 directories contain project-authored source files and dependency specifications verified against the original frozen bundles. Provider entrypoints, private launch manifests and third-party wheels are excluded. Each SOURCE_MANIFEST.json binds the preserved files. Run the historical scripts with their corresponding src directory on PYTHONPATH and the original frozen data paths. V3 continues the original v1 adapter, not v2. See ../docs/REPRODUCTION.md for hashes, access and nondeterminism limitations. These snapshots do not include model weights.

@@ -1,0 +1,17 @@
+# Local state and model binaries
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.env
+.env.*
+outputs/
+*.safetensors
+*.pt
+*.bin
+*.whl
+*.pem
+*.key
+.pytest_cache/

@@ -1,0 +1,25 @@
+{
+  "schema": "aegistune.reserved_test_plan/1",
+  "dataset_sha256": "15d70b505580a319c0a70cea30de39f8e2acf356b2b98d88431ae9f2ce2d8500",
+  "expected_case_count": 200,
+  "expected_split": "test",
+  "reserved_test": true,
+  "evaluation_name": "p5_paired_reserved_test200_evaluation",
+  "adapter_sha256": "269f6cc06c31506e651fc146c06ec675b6e21f012d119dd5a93e76a3c724a81a",
+  "inference": {
+    "generation_policy": "greedy",
+    "max_context_tokens": 4096,
+    "max_new_tokens": 128,
+    "max_turns": 4,
+    "eos_token_ids": [
+      6,
+      261001,
+      3
+    ]
+  },
+  "analysis": {
+    "report_original_proposal_counter": true,
+    "report_supplementary_mission_intent_audit": true,
+    "no_post_test_tuning": true
+  }
+}

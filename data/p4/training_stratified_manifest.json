@@ -1,0 +1,37 @@
+{
+  "schema_version": "aegistune.training_stratified_manifest/1",
+  "subset_file": "training_stratified_subset.jsonl",
+  "total_cases": 12,
+  "sha256": "efab37d80b53e164494a0992ce0072d4d81772dd924acabfdd20cdf86f2ddb87",
+  "bytes": 31115,
+  "cohort_distribution": {
+    "benign": 6,
+    "adversarial": 6
+  },
+  "language_distribution": {
+    "en": 6,
+    "es": 6
+  },
+  "family_distribution": {
+    "benign_inquiry": 2,
+    "legitimate_refund": 2,
+    "proposal_staging": 2,
+    "adversarial_injection": 2,
+    "adversarial_wrong_destination": 2,
+    "adversarial_excessive_amount": 2
+  },
+  "case_ids": [
+    "case-train-0001",
+    "case-train-0002",
+    "case-train-0081",
+    "case-train-0082",
+    "case-train-0201",
+    "case-train-0202",
+    "case-train-0261",
+    "case-train-0262",
+    "case-train-0321",
+    "case-train-0322",
+    "case-train-0361",
+    "case-train-0362"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "files": {
+    "requirements.txt": "3a37664d2f39a59b19e0f7a6ad56f8bb45c49f5fca17369ad79757786af54363",
+    "scripts/run_p4_baseline_evaluation.py": "487d3406d4236556831bd8512e9a45a15e72ad2d745e1850151a9f194336d097",
+    "scripts/run_p4_paired_dev60_evaluation.py": "267902173bfee8d95c93ed7c6fcc9ad667218fd34e116bf82c30daa909649c3f",
+    "scripts/run_p4_sft_warmup.py": "8268d25b5996128b3c1798d8ef9961dd18693d7a78ffe935a8bf92ce7edae15f",
+    "src/aegistune/contracts.py": "821a797e4a5d5c281c355aee5c01ef5fe5b17fdc5e7354a1492bf1d370e3ba59",
+    "src/aegistune/environment.py": "d130972ac204a8a97d3674d214fe7940f7518dbfdd3488e2890e29ceaacd4296",
+    "src/aegistune/evaluation.py": "805aae4c2f6bbcb23e3d06ad67d47cb7e0d8e696772a31b29367a59bd13d9ae9",
+    "src/aegistune/events.py": "4400ed30f65313ed6f6c6964e4e57937c0d233ff804a275420803a3d10a7426a",
+    "src/aegistune/gateway.py": "fca9ab0a2e4f70d212d7a08c1817fad41f56b0ef87912af583f40fe4acf360f8",
+    "src/aegistune/model_loader.py": "bcd33de44d40bc53578e4c862af6a2e32413b37ee6dfb2e565523dd9cdae2520",
+    "src/aegistune/rewards.py": "8b53173b92b97bd5b5e99c2f2f5c965c637187ced1a73d1de7948a0195c7d8e5",
+    "src/aegistune/rollout.py": "745a92fa3b9f1c4a89d004d30a1819081f2f77e7127bcbcce2a56f90031a0254",
+    "src/aegistune/scenario.py": "21cd9e76c685724e5d9d2a6e5483669d71b87546110b319873b50f368ad23644",
+    "src/aegistune/tools.py": "abc42730124d1247fd3fe2e2edddae8cf00ab369edb9cfd48a54d669efb7101d",
+    "src/aegistune/__init__.py": "d3b590d88488ea59348d724e60d120da2d4f2a523184e732a6b3aed4d4c61a87",
+    "src/aegistune/integrations/agenttune.py": "8270139fee25e700c5d50ca3ae0dd02fc7c0c88570d074bc21ba14fba0bc3293",
+    "src/aegistune/integrations/auditkit.py": "239450f4bf106622cdf1a11542ef18226b975591aaf34392fbe9f84384986dfa",
+    "src/aegistune/integrations/__init__.py": "fe172a9462aa8a3c8cc43d987fe23b3318463bdb35a4f996b6d08e645eaba667"
+  }
+}

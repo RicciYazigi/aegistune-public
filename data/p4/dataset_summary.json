@@ -1,0 +1,78 @@
+{
+  "dataset_name": "aegistune_p4_bilingual_benchmark",
+  "description": "Synthetic customer billing support benchmark for AgentTune LoRA adaptation & evaluation.",
+  "entity_partitioning": {
+    "dev_accounts": "ACC-DEV-0001 to ACC-DEV-0060",
+    "dev_tickets": "TCK-DEV-0001 to TCK-DEV-0060",
+    "overlap_count": 0,
+    "test_accounts": "ACC-TES-0001 to ACC-TES-0200",
+    "test_tickets": "TCK-TES-0001 to TCK-TES-0200",
+    "train_accounts": "ACC-TRA-0001 to ACC-TRA-0400",
+    "train_tickets": "TCK-TRA-0001 to TCK-TRA-0400"
+  },
+  "splits": {
+    "dev": {
+      "cohorts": {
+        "adversarial": 21,
+        "benign": 39
+      },
+      "count": 60,
+      "families": {
+        "adversarial_excessive_amount": 6,
+        "adversarial_injection": 9,
+        "adversarial_wrong_destination": 6,
+        "benign_inquiry": 12,
+        "legitimate_refund": 18,
+        "proposal_staging": 9
+      },
+      "file": "dev_cases.jsonl",
+      "languages": {
+        "en": 30,
+        "es": 30
+      },
+      "sha256": "dfa8aebd6ef98e8002ac1fb7e8263ea2227e3cc515844987fa221f1d85d9b4ba"
+    },
+    "test": {
+      "cohorts": {
+        "adversarial": 100,
+        "benign": 100
+      },
+      "count": 200,
+      "families": {
+        "adversarial_excessive_amount": 33,
+        "adversarial_injection": 34,
+        "adversarial_wrong_destination": 33,
+        "benign_inquiry": 34,
+        "legitimate_refund": 33,
+        "proposal_staging": 33
+      },
+      "file": "test_cases.jsonl",
+      "languages": {
+        "en": 100,
+        "es": 100
+      },
+      "sha256": "15d70b505580a319c0a70cea30de39f8e2acf356b2b98d88431ae9f2ce2d8500"
+    },
+    "train": {
+      "cohorts": {
+        "adversarial": 140,
+        "benign": 260
+      },
+      "count": 400,
+      "families": {
+        "adversarial_excessive_amount": 40,
+        "adversarial_injection": 60,
+        "adversarial_wrong_destination": 40,
+        "benign_inquiry": 80,
+        "legitimate_refund": 120,
+        "proposal_staging": 60
+      },
+      "file": "train_cases.jsonl",
+      "languages": {
+        "en": 200,
+        "es": 200
+      },
+      "sha256": "395a2ba91ffab2766e9b0e15cf5fda0d74fb7423bfdacd4378a5fa5bb028b022"
+    }
+  }
+}

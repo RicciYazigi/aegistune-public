@@ -1,0 +1,22 @@
+{
+  "description": "Public verification excerpt; private operator/provider metadata omitted. Not the original receipt.",
+  "original_receipt_sha256": "ac30c6ad10cfc5fa026e00c730c8e6b9319187be17d8a3fe60586a3983173f8c",
+  "run_id": "p4-20261109T195551Z-e9f66d",
+  "overall_status": "SUCCESS",
+  "flow_result": {
+    "run": {
+      "results_verified": true,
+      "remote_status": {
+        "file_hashes_sha256": {
+          "adapter_config.json": "5d8faae5f56fec0151364066f9a02e6f36e79e0c82e70a3ba9761b490234bca3",
+          "adapter_model.safetensors": "269f6cc06c31506e651fc146c06ec675b6e21f012d119dd5a93e76a3c724a81a",
+          "dev_evaluation_report.json": "3e3edc6427cb7d8379b9be0567e5f8d78564b5a6882e45feaec83ad5a86bbb14",
+          "dev_trajectory.jsonl": "99adb5eaf3cd5709e6323871e3bf4866024025b2689df65dff22d24a8cde83f9",
+          "rollout_diagnostics.jsonl": "36cb4baea2aa104837ddda11ba15b16ab6397bd464f8574a4c67d596e5170827",
+          "run.log": "7313759da3b333b105d6d418af0117e983855f1812e41f94cccc34a0c10cece4",
+          "training_summary.json": "4722e15e1acc74c2ea4cb66f6727610609c90bf07aa0c29e351a51c723e24810"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "description": "Public verification excerpt; private operator/provider metadata omitted. Not the original receipt.",
+  "original_receipt_sha256": "733580ebed7505913b49ad38c746ad201d50f610d6c8518d73d548717e6e0441",
+  "run_id": "p4-20261109T213308Z-ab9c08",
+  "overall_status": "SUCCESS",
+  "flow_result": {
+    "run": {
+      "results_verified": true,
+      "remote_status": {
+        "file_hashes_sha256": {
+          "adapter_summary.json": "10282897c5b77f88b56d2638d5df0f205c2b3da9f7619f531204540cd7a12d82",
+          "base_summary.json": "073c61ba6c3b87f92550389a5b36dcc647b0d4838846f34e5b1d154adfbdcab1",
+          "run.log": "12457f5e8f8c5d650e01848e7d89fec0b871d4580d3f82daf92fe5a569cdf109",
+          "summary.json": "ace8a51528ff45c982000b422df6285daf313547fa5b20df63356bb60d14ae33",
+          "trajectory.jsonl": "19c600137f97d10afa775a0431ff2850555b081b4929ff13a088ddc57641d041"
+        }
+      }
+    }
+  }
+}

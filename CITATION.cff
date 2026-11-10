@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use AegisTune, cite this repository and the exact release or commit."
+title: "AegisTune: Auditable billing agents"
+type: software
+authors:
+  - name: "AegisTune contributors"
+version: 0.1.0
+license: Apache-2.0
+abstract: >-
+  A synthetic bilingual billing-agent environment, supervised LoRA adaptation,
+  independent outcome auditing, and recorded paired evidence for Tiny Aya Global.
+  The reserved evaluation compares a fixed base model and SFT v3 adapter on 200
+  cases per arm; the separate AgentTune GRPO pilot is an instrumental result.
