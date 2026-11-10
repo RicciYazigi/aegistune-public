@@ -207,3 +207,7 @@ the base-model and framework terms. This license does not relicense third-party
 weights or packages. Model access and publication remain subject to their terms.
 
 [Current release status](docs/RELEASE_STATUS.md).
+
+## Public evidence demo
+
+[Open the AegisTune evidence Space](https://huggingface.co/spaces/RicciYazigi/aegistune-evidence). This is an interactive replay of recorded paired evaluations, not live inference.
