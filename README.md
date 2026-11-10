@@ -182,8 +182,7 @@ identity, historical-source boundary, package hashes, and commands.
 
 [Machine-readable results](docs/results/test200_summary.json) include original
 artifact hashes. The release package separates code/data/evidence from model
-weights and excludes private coordination and credentials. Model and dataset Hub links are pending publication approval. Their identities
-and local review evidence are recorded here.
+weights and excludes private coordination and credentials. Model and dataset artifacts are publicly available through the collections linked below.
 
 ## Scope and limitations
 
@@ -211,3 +210,10 @@ weights or packages. Model access and publication remain subject to their terms.
 ## Public evidence demo
 
 [Open the AegisTune evidence Space](https://huggingface.co/spaces/RicciYazigi/aegistune-evidence). This is an interactive replay of recorded paired evaluations, not live inference.
+
+## Public model and data
+
+- [Model collection](https://huggingface.co/collections/RicciYazigi/aegistune-models-6af330852fdbcb4194a7ba2c) · [Selected SFT v3 adapter](https://huggingface.co/RicciYazigi/aegistune-tiny-aya-lora)
+- [Dataset collection](https://huggingface.co/collections/RicciYazigi/aegistune-data-and-evidence-6af3308596f1197ded458a3e) · [Synthetic benchmark](https://huggingface.co/datasets/RicciYazigi/aegistune-billing-benchmark) · [Evaluation evidence](https://huggingface.co/datasets/RicciYazigi/aegistune-evaluation-evidence)
+
+The adapter is public and ungated; the upstream base model retains its own access requirements and license. No later GRPO improvement is claimed.
