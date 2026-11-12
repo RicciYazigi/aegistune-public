@@ -1,1 +1,94 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="280" viewBox="0 0 1200 280" role="img" aria-labelledby="title desc"><title id="title">AegisTune — Auditable billing agents</title><desc id="desc">A ledger with a check mark, accompanied by the project name and the words Actions, permissions, outcomes.</desc><rect width="1200" height="280" rx="18" fill="#102d39"/><path d="M960 0h240v280H740z" fill="#173d46"/><g transform="translate(65 61)" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="0" y="0" width="110" height="146" rx="14" stroke="#7ed1ad" stroke-width="3"/><path d="M22 35h64M22 58h64M22 81h30" stroke="#7ed1ad" stroke-width="3"/><circle cx="94" cy="120" r="36" fill="#12795e" stroke="#a7e5bf" stroke-width="3"/><path d="m77 121 11 11 24-26" stroke="#ecfff4" stroke-width="5"/></g><text x="235" y="115" fill="#f0f7f4" font-family="Segoe UI,Arial,sans-serif" font-size="54" font-weight="700" letter-spacing="-1">AegisTune</text><text x="237" y="159" fill="#b6d8ce" font-family="Segoe UI,Arial,sans-serif" font-size="25">Auditable billing agents</text><text x="239" y="211" fill="#83aba7" font-family="Segoe UI,Arial,sans-serif" font-size="14" letter-spacing="3">ACTIONS · PERMISSIONS · OUTCOMES</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-labelledby="title desc">
+  <title id="title">AegisTune — Auditable Billing Agents</title>
+  <desc id="desc">Enterprise telemetry banner for AegisTune showing deterministic gateway, independent mission oracle, and reserved-test metrics (77/200 Base vs 182/200 SFT v3).</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050b10"/>
+      <stop offset="55%" stop-color="#0a1822"/>
+      <stop offset="100%" stop-color="#06211e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="50%" stop-color="#2dd4bf"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <linearGradient id="barGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#1e3a4a" stroke-width="0.6" stroke-opacity="0.35"/>
+    </pattern>
+  </defs>
+
+  <!-- Background & Grid -->
+  <rect width="1200" height="320" rx="18" fill="url(#bg)" stroke="#1e3a4a" stroke-width="2"/>
+  <rect width="1200" height="320" rx="18" fill="url(#grid)"/>
+  <rect x="0" y="0" width="1200" height="4" rx="2" fill="url(#accent)"/>
+
+  <!-- Left Column: Brand & Architecture Identity -->
+  <g transform="translate(46, 46)">
+    <!-- Pill Kicker -->
+    <rect x="0" y="0" width="372" height="28" rx="14" fill="#0d2834" stroke="#14b8a6" stroke-width="1"/>
+    <circle cx="16" cy="14" r="4.5" fill="#10b981"/>
+    <text x="30" y="18.5" fill="#5eead4" font-family="DejaVu Sans Mono, Consolas, monospace" font-size="11" font-weight="700" letter-spacing="1.2">DETERMINISTIC GATEWAY · MISSION ORACLE</text>
+
+    <!-- Main Title -->
+    <text x="0" y="86" fill="#f8fafc" font-family="Inter, DejaVu Sans, Segoe UI, Arial, sans-serif" font-size="54" font-weight="800" letter-spacing="-1">AegisTune</text>
+    <rect x="284" y="54" width="84" height="30" rx="6" fill="#063429" stroke="#10b981" stroke-width="1.2"/>
+    <text x="326" y="74" text-anchor="middle" fill="#34d399" font-family="DejaVu Sans Mono, Consolas, monospace" font-size="15" font-weight="700">SFT v3</text>
+
+    <!-- Subtitle -->
+    <text x="2" y="122" fill="#cbd5e1" font-family="Inter, DejaVu Sans, Segoe UI, Arial, sans-serif" font-size="18.5" font-weight="500">Auditable bilingual billing agents evaluated on actual sandbox outcomes</text>
+
+    <!-- Architecture Pills -->
+    <g transform="translate(0, 150)" font-family="DejaVu Sans Mono, Consolas, monospace" font-size="11.5" font-weight="700">
+      <rect x="0" y="0" width="166" height="30" rx="6" fill="#0f2430" stroke="#284b5e"/>
+      <text x="83" y="19" text-anchor="middle" fill="#93c5fd">Tiny Aya Global 3.35B</text>
+
+      <rect x="176" y="0" width="160" height="30" rx="6" fill="#0f2430" stroke="#284b5e"/>
+      <text x="256" y="19" text-anchor="middle" fill="#6ee7b7">Transformers + PEFT</text>
+
+      <rect x="346" y="0" width="162" height="30" rx="6" fill="#0f2430" stroke="#284b5e"/>
+      <text x="427" y="19" text-anchor="middle" fill="#fde047">AuditKIT + AgentTune</text>
+
+      <rect x="518" y="0" width="128" height="30" rx="6" fill="#0f2430" stroke="#284b5e"/>
+      <text x="582" y="19" text-anchor="middle" fill="#e2e8f0">EN + ES Replay</text>
+    </g>
+
+    <!-- Bottom Provenance Line -->
+    <text x="2" y="214" fill="#64748b" font-family="DejaVu Sans Mono, Consolas, monospace" font-size="11" letter-spacing="0.4">RUN: p4-20261109T213308Z-ab9c08 · ADAPTER SHA-256: 269f6cc06c31... · SIMULATED SANDBOX</text>
+  </g>
+
+  <!-- Right Column: Telemetry Comparison Card -->
+  <g transform="translate(744, 36)">
+    <rect x="0" y="0" width="414" height="248" rx="12" fill="#08151e" stroke="#1e3f50" stroke-width="1.5"/>
+    <text x="22" y="30" fill="#94a3b8" font-family="DejaVu Sans Mono, Consolas, monospace" font-size="11" font-weight="700" letter-spacing="1.1">FROZEN RESERVED TEST (200 PAIRED CASES)</text>
+    <line x1="22" y1="42" x2="392" y2="42" stroke="#193342" stroke-width="1"/>
+
+    <!-- Metric 1: Completed Missions -->
+    <text x="22" y="68" fill="#e2e8f0" font-family="Inter, DejaVu Sans, sans-serif" font-size="13.5" font-weight="700">Completed Missions</text>
+    <text x="392" y="68" text-anchor="end" fill="#34d399" font-family="DejaVu Sans Mono, Consolas, monospace" font-size="13.5" font-weight="700">77/200 → 182/200 (91%)</text>
+    <rect x="22" y="76" width="370" height="8" rx="4" fill="#142936"/>
+    <rect x="22" y="76" width="142" height="8" rx="4" fill="#f87171"/>
+    <rect x="22" y="88" width="370" height="10" rx="5" fill="#142936"/>
+    <rect x="22" y="88" width="337" height="10" rx="5" fill="url(#barGrad)"/>
+
+    <!-- Metric 2: Benign Cohort -->
+    <text x="22" y="124" fill="#e2e8f0" font-family="Inter, DejaVu Sans, sans-serif" font-size="13.5" font-weight="700">Benign Missions Completed</text>
+    <text x="392" y="124" text-anchor="end" fill="#38bdf8" font-family="DejaVu Sans Mono, Consolas, monospace" font-size="13.5" font-weight="700">4/100 → 82/100 (82%)</text>
+    <rect x="22" y="132" width="370" height="8" rx="4" fill="#142936"/>
+    <rect x="22" y="132" width="15" height="8" rx="4" fill="#f87171"/>
+    <rect x="22" y="144" width="370" height="10" rx="5" fill="#142936"/>
+    <rect x="22" y="144" width="303" height="10" rx="5" fill="#38bdf8"/>
+
+    <!-- Metric 3: KPI Grid Footer -->
+    <rect x="22" y="170" width="178" height="58" rx="8" fill="#0d212d" stroke="#1d3c4d"/>
+    <text x="34" y="190" fill="#94a3b8" font-family="Inter, DejaVu Sans, sans-serif" font-size="10.5" font-weight="700">UNAUTHORIZED EFFECTS</text>
+    <text x="34" y="214" fill="#34d399" font-family="DejaVu Sans Mono, Consolas, monospace" font-size="17" font-weight="700">17/200 → 0/200</text>
+
+    <rect x="214" y="170" width="178" height="58" rx="8" fill="#0d212d" stroke="#1d3c4d"/>
+    <text x="226" y="190" fill="#94a3b8" font-family="Inter, DejaVu Sans, sans-serif" font-size="10.5" font-weight="700">INTENT DEVIATIONS</text>
+    <text x="226" y="214" fill="#fcd34d" font-family="DejaVu Sans Mono, Consolas, monospace" font-size="17" font-weight="700">70/380 → 2/600</text>
+  </g>
+</svg>

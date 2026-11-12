@@ -39,6 +39,11 @@ mission requirements.
 
 ## Reserved-test results
 
+[![Recorded TEST200 mission checks: base 77/200; selected SFT v3 182/200. See limitations below.](docs/assets/test200-missions.gif)](docs/RESULTS_TEST200.md)
+
+[Static figure](docs/assets/test200-missions.png). Animation reveals fixed recorded outcomes; it is not a training curve.
+
+
 Same base instance, tokenizer, gateway, oracle, decoding policy, and runtime for
 both arms; a fresh sandbox for each episode. **200 cases per arm, 400 episodes.**
 
