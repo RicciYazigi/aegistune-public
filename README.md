@@ -2,7 +2,7 @@
 
 # AegisTune — Auditable billing agents
 
-**A small bilingual billing agent, evaluated on the work it actually completes.**
+**A small bilingual billing agent with inspectable tool-use and outcome evidence.**
 
 AegisTune adapts [Tiny Aya Global](https://huggingface.co/CohereLabs/tiny-aya-global)
 to read support tickets, inspect ledgers, issue authorized refunds, and prepare
@@ -10,9 +10,15 @@ supervisory proposals. Every tool attempt, gateway decision, and resulting effec
 can be inspected in a paired evidence replay.
 
 On a frozen **200-case synthetic test**, the selected LoRA adapter completed
-**182/200 missions (91%)**, compared with **77/200 (38.5%)** for the base model.
+**182/200 historical mission checks (91%)**, compared with **77/200 (38.5%)** for the base model.
 Benign task completion increased from **4% to 82%**. The model and inference
 configuration were fixed before this evaluation.
+
+**Workflow completion is not answer quality.** Later diagnostic runs found that
+generic drafts could pass the historical mission predicate while omitting an
+observed balance. An equal-exposure 48-case challenge also exposed one incorrect
+simulated refund. [Follow-up findings and limits](docs/FOLLOWUP_EVALUATIONS.md)
+report these results alongside the original benchmark.
 
 [Results](docs/RESULTS_TEST200.md) · [Recorded replay](docs/demo/README.md) ·
 [Reproduction](docs/REPRODUCTION.md) · [Model card](docs/MODEL_CARD.md) ·
@@ -25,10 +31,11 @@ verified account and remain below a spending limit while paying the wrong amount
 A cautious agent can also fail by drafting a reply when an authorized refund was
 required.
 
-AegisTune measures these failures separately. The gateway enforces technical
-permissions; an independent mission oracle checks whether the resulting state
-satisfies the user's task. An additional offline audit checks proposed financial
-and outbound operations against mission intent.
+AegisTune measures these layers separately. An inline gateway enforces technical
+permissions during execution. After each episode, an independent sandbox mission oracle
+evaluates whether resulting state and receipts actually satisfied the customer request,
+while an offline intent audit checks proposed financial and outbound operations against
+mission requirements.
 
 ## Reserved-test results
 
@@ -217,3 +224,9 @@ weights or packages. Model access and publication remain subject to their terms.
 - [Dataset collection](https://huggingface.co/collections/RicciYazigi/aegistune-data-and-evidence-6af3308596f1197ded458a3e) · [Synthetic benchmark](https://huggingface.co/datasets/RicciYazigi/aegistune-billing-benchmark) · [Evaluation evidence](https://huggingface.co/datasets/RicciYazigi/aegistune-evaluation-evidence)
 
 The adapter is public and ungated; the upstream base model retains its own access requirements and license. No later GRPO improvement is claimed.
+
+## Video walkthrough
+
+[Watch or download the recorded evidence walkthrough — English, 3:27](https://huggingface.co/datasets/RicciYazigi/aegistune-evaluation-evidence/resolve/main/media/AegisTune_Evidence_Walkthrough_EN_Final.mp4)
+
+Historical TEST200 recorded walkthrough (English, 3 min 27 sec): 200 paired cases, 400 episodes, with a separate development example. Mission checks do not establish full semantic answer quality. All payments are simulated. Follow-up diagnostics, including Challenge48, are described in the written findings. [Follow-up findings](docs/FOLLOWUP_EVALUATIONS.md).

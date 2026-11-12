@@ -24,8 +24,13 @@ particular score.
 
 ## Official fit and presentation
 
-Our interpretation is that Track3.7—multi-step business workflows with rules,
-approvals and an audit trail—is the closest problem statement. [Official tracks](https://hackathon.lexsi.ai/#tracks).
+Our interpretation is that Track 3.7—multi-step business workflows with rules,
+approvals and an audit trail—is the primary problem statement, with Track 3.9
+(Reward design and reward-hacking defences) as secondary. [Official tracks](https://hackathon.lexsi.ai/#tracks).
+The fit for Track 3.9 is demonstrated by our analysis of evaluator and reward blind spots:
+a simple non-empty draft predicate or generic apology passes automated mission checks
+without delivering the required ledger information to the customer, revealing an
+evaluator specification failure in workflow evaluation.
 
 The kickoff judging description emphasizes write-up clarity, practical usefulness
 and code/notebook quality. The repository therefore puts the concrete business
@@ -53,8 +58,10 @@ test. A future version needs fresh evaluation.
 
 ## Release boundary
 
-Code, selected data/evidence and documentation are prepared locally for review.
-Public Hub collections, deployment links and the submission must be checked
-against the current [official submission requirements](https://hackathon.lexsi.ai/#submit)
-and authorized separately. No acceptance, shortlist, winning probability or
-public availability is claimed by this document.
+The core project (repository code, selected v3 LoRA adapter, benchmark dataset,
+evaluation evidence and static replay Space) is already published publicly under
+commit `ccd7c205` and associated Hugging Face collections. This update consolidates
+follow-up diagnostics (P11–P18), evaluator limitation disclosures and documentation errata.
+Deployment of follow-up updates, evidence expansion and final hackathon form submission
+require separate owner authorization. No acceptance, shortlist or winning probability
+is claimed by this document.

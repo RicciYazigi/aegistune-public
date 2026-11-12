@@ -1,6 +1,6 @@
 # AegisTune: learning the difference between a permitted tool and an authorized task
 
-Local research draft, 9 November 2026. Not submitted or published. The frozen reserved evaluation is complete; development and reserved results are reported separately below.
+Research record updated 11 November 2026. The historical reserved evaluation and subsequent development diagnostics are reported separately; v3 remains the selected public adapter.
 
 ## The operational problem
 
@@ -36,7 +36,7 @@ V3 instead continued **v1**, not v2, for 100 steps at 1e-5 without duplicating o
 
 The synthetic benchmark contains 400 train,60 development and 200 reserved-test missions. Entity prefixes and normalized surface text are separated between splits. A small set of related task families remains; this is not a claim of unseen-family generalization. The development set has 39 benign and 21 adversarial missions,30 English and 30 Spanish.
 
-Each paired run uses the same loaded base instance/container, tokenizer, gateway and oracle. Inference is greedy,4 turns,4096 context tokens,128 new tokens per turn, EOS [6,261001,3]. The base runs first; the saved adapter is then verified and attached. Effects and mission utility come from trusted state/receipts, not a model's statement that it acted.
+Each paired run uses the same loaded base instance/container, tokenizer, gateway and oracle. Inference is greedy,4 turns,4096 context tokens,128 new tokens per turn, reported terminator IDs [6,261001,3]. Historical metadata alone does not establish that these IDs were passed explicitly to generation; see the provenance correction in [follow-up evaluations](FOLLOWUP_EVALUATIONS.md). The base runs first; the saved adapter is then verified and attached. Effects and mission utility come from trusted state/receipts, not a model's statement that it acted.
 
 | Development measure | Base | SFT v1 | SFT v2 | Selected v3 |
 | --- | ---: | ---: | ---: | ---: |
@@ -82,7 +82,7 @@ This unequal exposure and explicit task cues constrain injection-resistance clai
 The five required artifacts passed SHA verification, and all 400 traces passed exact
 case/decision joins. Nominal supervisor cost~0.398 USD over 59.7 minutes, with actual
 invoice unknown; provider pause and an additional final API check confirmed PAUSED.
-No post-test training or candidate reselection was performed. [Complete reserved
+No post-test training or candidate reselection was performed for that historical evaluation. Later experimental continuations did not replace its frozen v3 adapter. [Complete reserved
 results and hashes](RESULTS_TEST200.md) and [recorded test replay](demo/test200.html).
 
 ## Limits and practical interpretation
@@ -102,4 +102,8 @@ We do not report latency/cost superiority against other systems. V3's train stag
 - Recorded local evidence: [demo/README.md](demo/README.md). The replay is explicitly not live inference.
 - Detailed development counts and artifact hashes: [RESULTS_DEV60.md](RESULTS_DEV60.md), [MODEL_CARD.md](MODEL_CARD.md).
 
-The upstream [Tiny Aya model card](https://huggingface.co/CohereLabs/tiny-aya-global) listsCC-BY-NC-4.0 and additional acceptable-use conditions. The repository's own packaging metadata declaresApache-2.0; that declaration does not relicense the base weights or third-party frameworks. Exact notices and distributable material must be reviewed before publication. No public upload, collection, submission or external message is established by these local artifacts.
+The upstream [Tiny Aya model card](https://huggingface.co/CohereLabs/tiny-aya-global) listsCC-BY-NC-4.0 and additional acceptable-use conditions. The repository's own packaging metadata declaresApache-2.0; that declaration does not relicense the base weights or third-party frameworks. Exact notices and distributable material must be reviewed before publication. The selected adapter and original benchmark/evidence collections are public. Submission has not been sent. Subsequent diagnostic results and their limits are summarized in [follow-up evaluations](FOLLOWUP_EVALUATIONS.md).
+
+## Follow-up evidence
+
+[Follow-up evaluations](FOLLOWUP_EVALUATIONS.md) include a recorded Spanish single-case inference, a negative prompt comparison, an equal-exposure counterexample, an unsuccessful SFT repair, and the conditional-likelihood diagnosis. These findings do not change the historical TEST200 numbers.

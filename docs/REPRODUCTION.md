@@ -19,6 +19,15 @@ Obtain the reviewed packages through the official distribution and respect their
 
 ## Evaluation first
 
+**Generation-policy clarification (10 November):** the historical reserved report
+records resolved terminators [6,261001,3], but its actor inherited generation
+defaults rather than passing an explicit EOS argument. Resolution alone does not
+establish those effective historical defaults. Preserve its frozen source and
+results; do not silently relabel them. Current development source passes resolved
+terminators explicitly. The four-arm development experiment documents and shares
+that new policy across its arms; see [the comparison](PROMPT_COMPARISON_RESULTS.md).
+Matching command-line limits alone does not prove identical historical stopping.
+
 Re-evaluation of the selected adapter is different from reproducing training bit for bit. Verify its actual weights hash before running inference. Use the same dataset hash, model revision, greedy policy, context 4096, output 128, 4 turns and EOS [6,261001,3]. The paired runner shares one base instance, then attaches the verified adapter. A new isolated environment is created per episode.
 
 ```powershell
