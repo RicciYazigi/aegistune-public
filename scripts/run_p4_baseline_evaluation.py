@@ -22,9 +22,12 @@ if _SRC.exists() and str(_SRC) not in sys.path:
     sys.path.insert(0, str(_SRC))
 
 import torch
+from equal_exposure import ticket_prelude
+from prompt_variants import VARIANTS, instructions, policy_record
+from observation_variants import observation_tool_name
 from peft import PeftModel
 from transformers import AutoConfig, AutoModelForCausalLM, AutoTokenizer
-from aegistune.model_loader import DEFAULT_MODEL_ID, DEFAULT_MODEL_REVISION, load_causal_lm
+from aegistune.model_loader import DEFAULT_MODEL_ID, DEFAULT_MODEL_REVISION, load_causal_lm, resolve_terminator_token_ids
 from aegistune.evaluation import PlannedExecutionManifest, evaluate_episode_batch
 
 from aegistune.contracts import (
@@ -387,6 +390,10 @@ class CausalModelActor:
         max_new_tokens: int = 128,
         device: str = "cpu",
         use_minimal_offline: bool = False,
+        prompt_variant: str = "original",
+        initial_ticket_message: dict | None = None,
+        observation_variant: str = "historical_status",
+        generation_observer: Any = None,
     ) -> None:
         if tokenizer is None and not use_minimal_offline:
             raise RuntimeError(
@@ -401,12 +408,23 @@ class CausalModelActor:
         self.device = device
         self.use_minimal_offline = use_minimal_offline
         self.turn = 0
+        observation_tool_name({}, None, observation_variant)
+        self.observation_variant = observation_variant
+        self.previous_tool_name = None
+        self.generation_observer = generation_observer
 
         formatter = TinyAyaPromptFormatter(language=case_spec.language)
         self.messages = formatter.render_messages(
             task_prompt=case_spec.user_task,
             public_policy=case_spec.public_policy,
         )
+        addendum = instructions(prompt_variant, case_spec.language)
+        if addendum:
+            self.messages[0]["content"] += "\n\n" + addendum
+        if initial_ticket_message is not None:
+            # Cohere chat templates require alternating roles. Keep the trusted
+            # task first and append the explicitly untrusted protocol payload.
+            self.messages[-1]["content"] += "\n\n" + initial_ticket_message["content"]
 
     def act_raw(self, current_obs: PreActionObservation | None) -> str:
         self.turn += 1
@@ -414,7 +432,7 @@ class CausalModelActor:
             obs_dict = current_obs.to_plain_dict()
             adapted = TinyAyaMessageAdapter.wrap_tool_observation(
                 obs_dict,
-                tool_name=str(obs_dict.get("status", "unknown")),
+                tool_name=observation_tool_name(obs_dict, self.previous_tool_name, self.observation_variant),
                 attempt_id=f"turn-{self.turn}",
                 language=self.case_spec.language,
             )
@@ -453,11 +471,21 @@ class CausalModelActor:
 
             context_tensor = torch.tensor([safe_ids], device=self.device)
 
+        if self.generation_observer is not None:
+            self.generation_observer({
+                "case_id": self.case_spec.case_id, "turn": self.turn,
+                "observation_variant": self.observation_variant,
+                "messages": json.loads(json.dumps(self.messages)),
+                "input_ids": context_tensor[0].tolist(),
+                "generation": {"max_new_tokens": self.max_new_tokens, "do_sample": False,
+                    "eos_token_id": resolve_terminator_token_ids(self.tokenizer, self.model.config)},
+            })
         with torch.no_grad():
             gen_out = self.model.generate(
                 context_tensor,
                 max_new_tokens=self.max_new_tokens,
                 do_sample=False,
+                eos_token_id=resolve_terminator_token_ids(self.tokenizer, self.model.config),
                 pad_token_id=getattr(self.tokenizer, "pad_token_id", 0) if self.tokenizer else 0,
             )
 
@@ -484,6 +512,10 @@ def run_single_episode(
     device: str = "cpu",
     use_minimal_offline: bool = False,
     model_revision: str = DEFAULT_MODEL_REVISION,
+    prompt_variant: str = "original",
+    ticket_prelude_record: dict | None = None,
+    observation_variant: str = "historical_status",
+    generation_observer: Any = None,
 ) -> tuple[EpisodeResult, OracleEvaluationVerdict]:
     """Execute a single episode with fresh environment isolation."""
     env_factory = EnvironmentFactory()
@@ -511,6 +543,10 @@ def run_single_episode(
             max_new_tokens=max_new_tokens,
             device=device,
             use_minimal_offline=use_minimal_offline,
+            prompt_variant=prompt_variant,
+            initial_ticket_message=ticket_prelude_record["message"] if ticket_prelude_record else None,
+            observation_variant=observation_variant,
+            generation_observer=generation_observer,
         )
     else:
         raise ValueError(f"Unsupported actor_mode: {actor_mode}")
@@ -532,6 +568,8 @@ def run_single_episode(
         step_res = env.step(model_raw)
         step_results.append(step_res)
         current_obs = step_res.observation_for_actor
+        if is_model:
+            actor.previous_tool_name = step_res.attempt.parsed_tool_name
 
         parsed_tool = step_res.attempt.parsed_tool_name
 
@@ -579,9 +617,18 @@ def run_baseline_evaluation(
     model: Any = None,
     tokenizer: Any = None,
     use_minimal_offline: bool = False,
+    prompt_variant: str = "original",
+    ticket_delivery: str = "agent_reads",
+    observation_variant: str = "historical_status",
+    generation_observer: Any = None,
 ) -> dict[str, Any]:
     """Run baseline evaluation over dev benchmark partition."""
     logger.info(f"Loading dev benchmark cases from {dev_cases_path}...")
+    prompt_metadata = policy_record(prompt_variant)
+    if ticket_delivery not in ("agent_reads", "equal_ticket_delivery_v1"):
+        raise ValueError("Unknown ticket delivery protocol")
+    if ticket_delivery != "agent_reads" and actor_mode not in ("model", "causal_model"):
+        raise ValueError("Equal delivery requires a model actor")
     dataset_bytes = dev_cases_path.read_bytes()
     lines = dataset_bytes.decode("utf-8").splitlines()
     cases_data = [json.loads(line) for line in lines if line.strip()]
@@ -605,6 +652,7 @@ def run_baseline_evaluation(
         cases_data = cases_data[:limit]
     if not cases_data:
         raise ValueError("Empty evaluation dataset")
+    initial_tickets = {case["case_id"]: ticket_prelude(case) for case in cases_data} if ticket_delivery != "agent_reads" else {}
 
     logger.info(f"Loaded {len(cases_data)} cases. Running evaluation with actor_mode='{actor_mode}'...")
 
@@ -679,6 +727,10 @@ def run_baseline_evaluation(
             device=device,
             use_minimal_offline=use_minimal_offline,
             model_revision=model_revision or DEFAULT_MODEL_REVISION,
+            prompt_variant=prompt_variant,
+            ticket_prelude_record=initial_tickets.get(scenario.case_spec.case_id),
+            observation_variant=observation_variant,
+            generation_observer=generation_observer,
         )
         episodes.append(ep_res)
 
@@ -769,6 +821,8 @@ def run_baseline_evaluation(
                 "cohort": cohort,
                 "language": scenario.case_spec.language,
                 "steps_executed": ep_res.steps_executed,
+                "prompt_variant": prompt_variant,
+                "initial_ticket_delivery": initial_tickets.get(scenario.case_spec.case_id),
                 "termination_reason": ep_res.termination_reason,
                 "task_completed": verdict.task_completed,
                 "task_utility": verdict.task_utility,
@@ -844,6 +898,10 @@ def run_baseline_evaluation(
         "max_turns": max_turns,
         "parser_version": parser_version,
         "generation_policy": generation_policy,
+        "prompt_policy": prompt_metadata,
+        "ticket_delivery_protocol": ticket_delivery,
+        "initial_ticket_payloads_delivered": len(initial_tickets),
+        "generation_stop_policy": "explicit_resolved_eos_v1",
         "actor_classification": {
             "is_privileged_oracle_ceiling": is_privileged,
             "has_ground_truth_oracle_access": is_privileged,
@@ -963,6 +1021,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--max-context-tokens", type=int, default=4096, help="Maximum context token budget")
     parser.add_argument("--max-new-tokens", type=int, default=128, help="Maximum new tokens generated per turn")
     parser.add_argument("--max-turns", type=int, default=4, help="Maximum allowed conversational turns per episode")
+    parser.add_argument("--prompt-variant", choices=VARIANTS, default="original")
+    parser.add_argument("--ticket-delivery", choices=("agent_reads", "equal_ticket_delivery_v1"), default="agent_reads")
     parser.add_argument(
         "--parser-version",
         type=str,
@@ -1008,6 +1068,8 @@ def main() -> None:
         parser_version=args.parser_version,
         generation_policy=args.generation_policy,
         use_minimal_offline=args.use_minimal_offline,
+        prompt_variant=args.prompt_variant,
+        ticket_delivery=args.ticket_delivery,
     )
 
     s = report["summary"]

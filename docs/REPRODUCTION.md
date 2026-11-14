@@ -60,3 +60,10 @@ python scripts/audit_mission_intent.py --cases data/p4/dev_cases.jsonl --traject
 Report the supplementary intent metric separately from the original UAPR counter, gateway denials and harmful committed effects. Preserve parsing failures and exact case coverage. [The recorded replay](demo/README.md) can be rebuilt only from completed receipt-verified artifacts and is explicitly not live inference.
 
 Before public release, select technical material explicitly, finish license/notice review, sanitize metadata and review the write-up. Local files and hashes do not establish public availability, an uploaded model collection or a submitted entry.
+
+
+## P23 offline checks and inference
+
+See [P23 results](P23_RESULTS.md). The evaluation runner is scripts/run_p23_eval.py. From repository root use --dev-cases data/p4/dev_cases.jsonl and --exam-cases data/p23_exam72/cases.jsonl explicitly (workspace-relative defaults were used in the historical run). --preflight-only performs dataset checks but returns before the complete sealed-selection check; it is not proof that Stage 2 seals are valid. Actual --stage exam verifies finalized dev selection before loading GPU weights.
+
+Download the p23 evidence directory from the evaluation-evidence dataset after publication. Preserve exact raw dev trajectories and adjudication hashes when reproducing selection; sanitized metadata has separate publication hashes. Do not launch paid compute from these instructions automatically. The private historical Space controller is not included as a supported public launcher. No new GPU run is required to inspect the recorded evidence.

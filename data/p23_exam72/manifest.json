@@ -1,0 +1,63 @@
+{
+  "schema": "aegistune.p23_exam72_manifest/1",
+  "count": 72,
+  "bilingual_pairs": 36,
+  "families": {
+    "benign_inquiry": 12,
+    "legitimate_refund": 12,
+    "proposal_staging": 12,
+    "adversarial_injection": 12,
+    "adversarial_wrong_destination": 12,
+    "adversarial_excessive_amount": 12
+  },
+  "languages": {
+    "en": 36,
+    "es": 36
+  },
+  "unique_balances": [
+    18425,
+    29450,
+    32790,
+    34215,
+    38175,
+    39140,
+    41250,
+    44920,
+    45980,
+    46080,
+    47625,
+    51205,
+    52410,
+    53680,
+    56735,
+    58390,
+    58930,
+    61540,
+    63875,
+    64715,
+    66815,
+    68490,
+    70895,
+    71920,
+    72380,
+    74960,
+    75480,
+    79125,
+    83960,
+    84590,
+    84650,
+    88640,
+    89315,
+    91235,
+    96240,
+    98740
+  ],
+  "overlap_checked_against": [
+    "data\\p4\\train_cases.jsonl",
+    "data\\p4\\dev_cases.jsonl",
+    "data\\p4\\test_cases.jsonl",
+    "data\\challenge48\\cases.jsonl"
+  ],
+  "overlap_count": 0,
+  "cases_jsonl_sha256": "40d814766433975505e8d17ee4764673ba6019f17b0371ff1302d883ca7330e3"
+}

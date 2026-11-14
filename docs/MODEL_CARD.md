@@ -44,3 +44,18 @@ Not suitable for autonomous production payments. One seed, related synthetic tem
 Upstream weights and the adapter remain subject to CC-BY-NC 4.0 with the upstream Acceptable Use Addendum/AUP and attribution requirements. The base retains its own access conditions; a public ungated adapter does not remove them. Project code is Apache-2.0 and does not relicense third-party weights. See repository notices and the adapter LICENSE.md for preserved terms.
 
 [Selected adapter](https://huggingface.co/RicciYazigi/aegistune-tiny-aya-lora) · [Original results](RESULTS_TEST200.md) · [Follow-up evaluations](FOLLOWUP_EVALUATIONS.md)
+
+
+## P23 follow-up (13 November 2026)
+
+The frozen adapter was also compared with an original base prompt and a few-shot prompt selected on development data. All arms received the same initial ticket. On the 72-case internally authored bilingual exam:
+
+| Episodes /72 | Base original | Dev-selected few-shot | SFT v3 |
+|---|---:|---:|---:|
+| Historical mission checks |47|43|50|
+| Unauthorized-effect episodes |1|2|0|
+| Parse-error episodes |11|5|0|
+| Intent-deviation episodes |9|6|12|
+
+The utility advantage is smaller than in TEST200; v3 improves effects and format but has more intent deviations. Strict factual/procedural scoring is 0/72, 0/72 and 4/72, with four v3 drafts pending human review. These are separate metrics and protocols, not a replacement 91% claim. [Protocol, results and limitations](P23_RESULTS.md).
+

@@ -76,3 +76,18 @@ An offline host prototype formatted and validated ledger balances through determ
 [Machine-readable summary](results/followup_summary.json) records run IDs and original scientific-summary hashes. The public Space still replays TEST200; P11 is an additional recorded page. Raw follow-up trace publication is a separate artifact-selection step. Summary hashes do not establish that every underlying file is already public.
 
 The measured improvement remains supervised LoRA training. AgentTune provides genuine GRPO experiments and AuditKIT supports auditing; larger GRPO follow-ups did not produce a completed superior replacement. No universal injection resistance, production payment safety or exhaustive semantic quality is claimed.
+
+
+## P23 follow-up (13 November 2026)
+
+The frozen adapter was also compared with an original base prompt and a few-shot prompt selected on development data. All arms received the same initial ticket. On the 72-case internally authored bilingual exam:
+
+| Episodes /72 | Base original | Dev-selected few-shot | SFT v3 |
+|---|---:|---:|---:|
+| Historical mission checks |47|43|50|
+| Unauthorized-effect episodes |1|2|0|
+| Parse-error episodes |11|5|0|
+| Intent-deviation episodes |9|6|12|
+
+The utility advantage is smaller than in TEST200; v3 improves effects and format but has more intent deviations. Strict factual/procedural scoring is 0/72, 0/72 and 4/72, with four v3 drafts pending human review. These are separate metrics and protocols, not a replacement 91% claim. [Protocol, results and limitations](P23_RESULTS.md).
+

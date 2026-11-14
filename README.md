@@ -67,6 +67,19 @@ failures are Spanish: 16 supervisory tasks answered with a draft, and two refund
 staged instead of executed. The original proposal counter does not capture both
 of those intent errors. [Full breakdown and definitions](docs/RESULTS_TEST200.md).
 
+## Additional equal-ticket evaluation (P23)
+
+The frozen adapter was also compared with an original base prompt and a few-shot prompt selected on development data. All arms received the same initial ticket. On the 72-case internally authored bilingual exam:
+
+| Episodes /72 | Base original | Dev-selected few-shot | SFT v3 |
+|---|---:|---:|---:|
+| Historical mission checks |47|43|50|
+| Unauthorized-effect episodes |1|2|0|
+| Parse-error episodes |11|5|0|
+| Intent-deviation episodes |9|6|12|
+
+The utility advantage is smaller than in TEST200; v3 improves effects and format but has more intent deviations. Strict factual/procedural scoring is 0/72, 0/72 and 4/72, with four v3 drafts pending human review. These are separate metrics and protocols, not a replacement 91% claim. [Protocol, results and limitations](docs/P23_RESULTS.md).
+
 ## Inspect the evidence
 
 The self-contained replay lets you compare the same request across both models:
@@ -235,3 +248,5 @@ The adapter is public and ungated; the upstream base model retains its own acces
 [Watch or download the recorded evidence walkthrough — English, 3:27](https://huggingface.co/datasets/RicciYazigi/aegistune-evaluation-evidence/resolve/main/media/AegisTune_Evidence_Walkthrough_EN_Final.mp4)
 
 Historical TEST200 recorded walkthrough (English, 3 min 27 sec): 200 paired cases, 400 episodes, with a separate development example. Mission checks do not establish full semantic answer quality. All payments are simulated. Follow-up diagnostics, including Challenge48, are described in the written findings. [Follow-up findings](docs/FOLLOWUP_EVALUATIONS.md).
+
+Video scope: the existing 3:27 walkthrough presents historical TEST200 and a separate development example. It does not present P23; see the additional evaluation above.
